@@ -1,0 +1,47 @@
+html{
+    margin:0;
+    padding:0;
+}
+body{
+    margin: 0;
+    padding:0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Microsoft YaHei', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti;
+}
+
+ul{
+    list-style: none
+}
+
+footer{
+    width:100%;
+    height: 50px;
+    border-top:1px solid rgb(118,211,251);
+    position: fixed;
+    bottom:0;
+    box-sizing: border-box;
+
+}
+.txt-center{
+    text-align: center;
+}
+.widths{ 
+    height: 100%;
+    padding-top:11px;
+    cursor: pointer;
+}
+.widths>div>i{
+    color: rgb(58,152,255);
+}
