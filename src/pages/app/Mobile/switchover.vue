@@ -1,9 +1,9 @@
 <template>
-    <footer>
-        <el-row>
-          <slot></slot>
-        </el-row>
-    </footer>
+    <el-col class="txt-center widths" :span="12">
+        <div  v-on:click="incrementCounter">
+            <slot></slot>
+        </div>
+    </el-col>
 </template>
 <style>
 
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: 'footer',
+    name: 'switchover',
     data() {
         let localdata = {}
         return {
@@ -23,7 +23,6 @@ export default {
     methods: {
         incrementCounter() {
             this.$emit('increment')
-
         }
     }
 }

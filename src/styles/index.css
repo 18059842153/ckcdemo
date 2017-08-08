@@ -5,6 +5,7 @@ html{
 body{
     margin: 0;
     padding:0;
+    font-size:14px;
 }
 h1,
 h2,
@@ -21,11 +22,14 @@ h6,
     font-family: 'Microsoft YaHei', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti;
 }
 
-ul{
-    list-style: none
+ul,li{
+    list-style: none;
+    padding:0;
+    margin:0;
 }
 
 footer{
+    background: #FFFFFF;
     width:100%;
     height: 50px;
     border-top:1px solid rgb(118,211,251);
@@ -44,4 +48,120 @@ footer{
 }
 .widths>div>i{
     color: rgb(58,152,255);
+}
+.colorred{
+    color:red;
+}
+.order-content {
+    padding: 15px 0;
+}
+
+.floatright {
+    float: right;
+}
+
+.item {
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+.borderbotm {
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.fontwei {
+    font-weight: 700;
+}
+
+.colorgray>span {
+    text-decoration: underline;
+}
+
+.colorgray {
+    color: gray;
+}
+
+.orderdata {
+    padding: 5px 15px;
+}
+
+.gray {
+    background: #f7f6f6;
+    height: 100%;
+}
+
+.pwddata {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+}
+
+.user-pwddata,
+.user-order,
+.user-content,
+.user-pay {
+    margin: 10px 0;
+    border-top: 1px solid #BABABA;
+    border-bottom: 1px solid #BABABA;
+    background: #ffffff;
+}
+
+.back {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    cursor: pointer;
+}
+
+.greener h3 {
+    margin-bottom: 10px;
+}
+
+.grid-contnet {
+    min-height: 36px;
+}
+
+.disinblock {
+    display: inline-block;
+}
+
+.header-content {
+    min-height: 40px;
+    position: relative;
+    top: -10px;
+}
+
+.padleft {
+    padding-left: 45px;
+}
+
+.padbom {
+    padding-bottom: 15px;
+}
+
+
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.greener {
+    background: #66CDAA;
+    color: #ffffff;
+}
+
+/*home*/
+.grid-contes{
+    min-height: 36px;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(58, 152, 255);
+    cursor: pointer;
+}
+.grid-contes:hover{
+    background: rgba(58, 152, 255,0.1);
+    color:rgba(58, 152, 255,0.7)
 }
