@@ -32,7 +32,7 @@ footer{
     background: #FFFFFF;
     width:100%;
     height: 50px;
-    border-top:1px solid rgb(118,211,251);
+    border-top:1px solid gray;
     position: fixed;
     bottom:0;
     box-sizing: border-box;
@@ -46,9 +46,7 @@ footer{
     padding-top:11px;
     cursor: pointer;
 }
-.widths>div>i{
-    color: rgb(58,152,255);
-}
+
 .colorred{
     color:red;
 }
@@ -151,16 +149,22 @@ img {
     background: #66CDAA;
     color: #ffffff;
 }
+.blueer{
+    color:rgba(58, 152, 255,0.7);
+}
 
 /*home*/
 .grid-contes{
     min-height: 36px;
-    border-bottom: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
+ /*    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd; */
     text-align: center;
     padding-top: 20px;
     color: rgb(58, 152, 255);
     cursor: pointer;
+}
+.home_gray{
+    color:#2F4F4F
 }
 .grid-contes:hover{
     background: rgba(58, 152, 255,0.1);
@@ -181,12 +185,16 @@ img {
 }
 
 .modal {
-    border: 1px solid rgb(118, 211, 251);
     margin: 0 auto;
-    margin-top: 8rem;
     border-radius: 5px;
-    width: 20rem;
+    width: 100%;
     min-height: 100px;
+}
+.login_button{
+    width:100%;
+}
+.login_padleft{
+    padding-left:1rem;
 }
 /* common */
 .card_header {

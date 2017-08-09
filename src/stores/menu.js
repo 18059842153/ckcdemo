@@ -5,7 +5,7 @@ export default [{
     menuTitle:'缴费记录',
     menuIcon:'fa fa-user-circle fa-2x',
 },{
-    menuTitle:'跟踪回访记录',
+    menuTitle:'跟踪回访',
     menuIcon:'fa fa-pencil fa-2x',
 },{
     menuTitle:'排课记录',
