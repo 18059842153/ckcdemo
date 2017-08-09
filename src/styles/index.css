@@ -60,7 +60,7 @@ footer{
     float: right;
 }
 
-.item {
+.user-item {
     margin-top: 10px;
     margin-right: 40px;
 }
@@ -108,9 +108,10 @@ footer{
 
 .back {
     position: absolute;
-    top: 2%;
+    top: 0.8rem;
     left: 2%;
     cursor: pointer;
+    z-index: 200;
 }
 
 .greener h3 {
@@ -164,4 +165,62 @@ img {
 .grid-contes:hover{
     background: rgba(58, 152, 255,0.1);
     color:rgba(58, 152, 255,0.7)
+}
+/* login */
+.modal-head>h3{
+    margin: 0;
+    line-height: 40px;
+}
+.modal-head{
+    background: rgb(118, 211, 251);
+    color:#ffffff;
+}
+.modal-body {
+    padding-top:25px;
+    padding-right:1rem;
+}
+
+.modal {
+    border: 1px solid rgb(118, 211, 251);
+    margin: 0 auto;
+    margin-top: 8rem;
+    border-radius: 5px;
+    width: 20rem;
+    min-height: 100px;
+}
+/* common */
+.card_header {
+    width: 100%;
+    min-height: 50px;
+}
+
+.card_body {
+    width: 95%;
+    min-height: 200px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.card_text {
+    font-size: 1rem;
+}
+
+.card_item {
+    padding: 0.6rem 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.box-card {
+    width: 100%;
 }

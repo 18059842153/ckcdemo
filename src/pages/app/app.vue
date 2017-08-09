@@ -3,8 +3,7 @@
         <component v-bind:is="currentView">
             <!-- 组件在 vm.currentview 变化时改变！ -->
         </component>
-    
-        <lb-footer>
+        <lb-footer v-if="currentView!='lb-login'">
             <lb-switchover v-on:increment="incrementTotalhome">
                 <i class="fa fa-home fa-2x" aria-hidden="ture"></i>
             </lb-switchover>
@@ -20,10 +19,12 @@ import header from './Mobile/header.vue'
 import body from './Mobile/body.vue'
 import banner from './Mobile/banner.vue'
 import footer from './Mobile/footer.vue'
+import switchover from './Mobile/switchover.vue'
 import user from '../views/user.vue'
 import home from '../views/home.vue'
 import login from '../views/login.vue'
-import switchover from './Mobile/switchover.vue'
+import common_use from '../dialogs/common_use/common_use.vue'
+
 
 export default {
     name: 'app',
@@ -31,11 +32,15 @@ export default {
         let localdata = {}
         return {
             localdata,
-            currentView: 'lb-login',
-
+            /*   currentView: 'lb-login', */
         }
     },
-    mounted() {},
+    computed: {
+        currentView() {
+            return this.$store.getters.yes
+        }
+    },
+    mounted() { },
     components: {
         'lb-header': header,
         'lb-body': body,
@@ -44,14 +49,17 @@ export default {
         'lb-home': home,
         'lb-user': user,
         'lb-switchover': switchover,
-        'lb-login':login
+        'lb-login': login,
+        'lb-common':common_use,
     },
     methods: {
         incrementTotalhome() {
-            this.currentView = 'lb-home'
+            /*      this.currentView = 'lb-home' */
+            this.$store.commit('homes', 'lb-home')
         },
-        incrementTotaluser(){
-            this.currentView = 'lb-user'
+        incrementTotaluser() {
+            /*   this.currentView = 'lb-user' */
+            this.$store.commit('homes', 'lb-user')
         }
     }
 }

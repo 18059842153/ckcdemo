@@ -30,9 +30,7 @@
                     </div>
                 </el-col>
             </el-row>
-            <div class="back">
-                <i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i>
-            </div>
+        
         </div>
         <div class='user-pwddata'>
             <el-row>
@@ -70,7 +68,7 @@
                             <el-col :span="12">
                                 <div class="txt-center">
                                     <span>
-                                        <el-badge :value="12" class="item">
+                                        <el-badge :value="12" class="user-item">
                                             <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
                                         </el-badge>
                                     </span>
@@ -79,7 +77,7 @@
                             <el-col :span="12">
                                 <div class="txt-center">
                                     <span>
-                                        <el-badge :value="43" class="item">
+                                        <el-badge :value="43" class="user-item">
                                             <i class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i>
                                         </el-badge>
                                     </span>
@@ -166,6 +164,7 @@ export default {
 
     },
     methods: {
+    
     }
 }
 </script>
