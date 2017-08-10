@@ -15,14 +15,17 @@
             </el-row>
         </div>
         <div class="card_body">
-            <el-card class="box-card">
-                <div slot="header" class="clearfix">
-                    <span style="line-height: 36px;">卡片名称</span>
-                </div>
-                <div v-for="o in 4" :key="o" class="card_text card_item">
-                    {{'列表内容 ' + o }}
-                </div>
-            </el-card>
+            <template v-for="item in dbdata">
+                <el-card class="box-card">
+                    <div class="card_text card_item">
+                        {{'跟踪回访:' + item.detail }}
+                    </div>
+                      <div class="card_text card_item">
+                        {{'跟踪回访:' + item.detail }}
+                    </div>
+                </el-card>
+                <br/>
+            </template>
         </div>
     </div>
 </template>
@@ -30,15 +33,26 @@
 export default {
     data() {
         return {
-
+            dbdata: []
         }
     },
-    mounted() { },
+    mounted() {
+        let filterObj = []
+        filterObj.push({
+            'key': 'student_id',
+            'value': '597ed44aad2c9f5c898c3d07',
+            'type': ''
+        })
+        let filterTxt = this.base64.encode(JSON.stringify(filterObj))
+        this.handleGetFilterTableTable('inquiry', filterTxt).then(obj => {
+            this.dbdata = obj.data.data
+            console.log(this.dbdata)
+        })
+    },
     computed: {},
     watch: {},
     methods: {
         handleBack() {
-            console.log('11')
             this.$store.commit('homes', 'lb-home')
         }
     }

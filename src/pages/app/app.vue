@@ -34,7 +34,6 @@ export default {
             localdata,
             iscolor1: true,
             iscolor2: false,
-            /*   currentView: 'lb-login', */
         }
     },
     computed: {

@@ -10,12 +10,14 @@
             </el-row>
         </div>
         <div class="home_body">
-            <el-col :span="6" v-for="item in menudata">
-                <div class="grid-contes" @click="handleClick">
-                    <i :class='item.menuIcon'></i>
-                    <p class="home_gray">{{item.menuTitle}}</p>
-                </div>
-            </el-col>
+            <template v-for="item in menudata">
+                <el-col :span="6">
+                    <div class="grid-contes" @click="handleClick">
+                        <i :class='item.menuIcon'></i>
+                        <p class="home_gray">{{item.menuTitle}}</p>
+                    </div>
+                </el-col>
+            </template>
         </div>
     </div>
 </template>
@@ -35,9 +37,6 @@ export default {
 
     },
     methods: {
-        getTest(val) {
-            console.log('11', val)
-        },
         handleClick() {
             this.$store.commit('homes', 'lb-common')
         }

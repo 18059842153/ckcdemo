@@ -1,12 +1,17 @@
 export default [{
     menuTitle:'课程记录',
     menuIcon:'fa fa-user-plus fa-2x',
+  
 },{
     menuTitle:'缴费记录',
     menuIcon:'fa fa-user-circle fa-2x',
 },{
     menuTitle:'跟踪回访',
     menuIcon:'fa fa-pencil fa-2x',
+  /*     menuTable:
+      menuFields:[
+
+      ] */
 },{
     menuTitle:'排课记录',
     menuIcon:'fa fa-shopping-cart fa-2x',
