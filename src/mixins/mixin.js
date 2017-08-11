@@ -76,6 +76,41 @@ export default {
                     resolve(response)
                 })
             })
-        }
+        },
+        getDateFormat(datestring) {
+            let dateTemp = moment(datestring)
+            let datetimestr = ''
+            if (dateTemp.isValid()) {
+                datetimestr = dateTemp.format('YYYY-MM-DD')
+            }
+            return datetimestr
+        },
+        getDictData(type, value) {
+            console.log(value, '1111111')
+            let tablaData = []
+            let tablaName = 'dictionary'
+            tablaData = this.$store.state.models.models[tablaName].data
+            let tablaDatas = ''
+            for (var i = 0; i < tablaData.length; i++) {
+                if (tablaData[i].type == type) {
+                    if (tablaData[i]._id == value) {
+                        tablaDatas = tablaData[i].text
+                        console.log(tablaDatas + 'mixin')
+                        break
+                    }
+                }
+            }
+            return tablaDatas
+        },
+        getTableApidata(table) {
+            let vm = this
+            return new Promise((resolve) => {
+                if (table) {
+                    vm.$store.dispatch(types.GET_API, table).then((response) => {
+                        resolve(response)
+                    })
+                }
+            })
+        },
     },
 }

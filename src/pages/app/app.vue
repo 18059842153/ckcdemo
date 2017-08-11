@@ -3,11 +3,11 @@
         <component v-bind:is="currentView">
             <!-- 组件在 vm.currentview 变化时改变！ -->
         </component>
-        <lb-footer v-if="currentView!='lb-login'" >
+        <lb-footer v-if="currentView!='lb-login'">
             <lb-switchover v-on:increment="incrementTotalhome">
-                <i  :class="{blueer:iscolor1}" class="fa fa-home fa-2x" aria-hidden="ture"></i>
+                <i :class="{blueer:iscolor1}" class="fa fa-home fa-2x" aria-hidden="ture"></i>
             </lb-switchover>
-            <lb-switchover v-on:increment="incrementTotaluser" >
+            <lb-switchover v-on:increment="incrementTotaluser">
                 <i :class="{blueer:iscolor2}" class="fa fa-user fa-2x" aria-hidden="ture"></i>
             </lb-switchover>
         </lb-footer>
@@ -41,7 +41,11 @@ export default {
             return this.$store.getters.yes
         }
     },
-    mounted() { },
+    mounted() {
+        if (this.$store.state.models.login) {
+            this.getTableApidata('dictionary')
+        }
+    },
     components: {
         'lb-header': header,
         'lb-body': body,

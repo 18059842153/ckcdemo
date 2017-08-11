@@ -12,7 +12,7 @@
         <div class="home_body">
             <template v-for="item in menudata">
                 <el-col :span="6">
-                    <div class="grid-contes" @click="handleClick">
+                    <div class="grid-contes" @click="handleClick(item.pageTable)">
                         <i :class='item.menuIcon'></i>
                         <p class="home_gray">{{item.menuTitle}}</p>
                     </div>
@@ -37,7 +37,9 @@ export default {
 
     },
     methods: {
-        handleClick() {
+        handleClick(value) {
+            this.$store.dispatch('commons',value)
+            console.log(this.$store.state.commondata.commondata)
             this.$store.commit('homes', 'lb-common')
         }
     }
