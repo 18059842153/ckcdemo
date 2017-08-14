@@ -3,7 +3,7 @@
         <component v-bind:is="currentView">
             <!-- 组件在 vm.currentview 变化时改变！ -->
         </component>
-        <lb-footer v-if="currentView!='lb-login'">
+        <lb-footer v-if="currentView!='lb-login flexs'">
             <lb-switchover v-on:increment="incrementTotalhome">
                 <i :class="{blueer:iscolor1}" class="fa fa-home fa-2x" aria-hidden="ture"></i>
             </lb-switchover>
@@ -14,10 +14,6 @@
     </div>
 </template>
 <script>
-
-import header from './Mobile/header.vue'
-import body from './Mobile/body.vue'
-import banner from './Mobile/banner.vue'
 import footer from './Mobile/footer.vue'
 import switchover from './Mobile/switchover.vue'
 import user from '../views/user.vue'
@@ -47,9 +43,6 @@ export default {
         }
     },
     components: {
-        'lb-header': header,
-        'lb-body': body,
-        'lb-banner': banner,
         'lb-footer': footer,
         'lb-home': home,
         'lb-user': user,
