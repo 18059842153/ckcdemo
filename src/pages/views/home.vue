@@ -11,7 +11,7 @@
         </div>
         <div class="home_body">
             <template v-for="item in menudata">
-                <el-col :span="6">
+                <el-col :span="8">
                     <div class="grid-contes" @click="handleClick(item.pageTable)">
                         <i :class='item.menuIcon'></i>
                         <p class="home_gray">{{item.menuTitle}}</p>

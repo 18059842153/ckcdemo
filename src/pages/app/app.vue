@@ -3,12 +3,12 @@
         <component v-bind:is="currentView">
             <!-- 组件在 vm.currentview 变化时改变！ -->
         </component>
-        <lb-footer v-if="currentView!='lb-login flexs'">
-            <lb-switchover v-on:increment="incrementTotalhome">
-                <i :class="{blueer:iscolor1}" class="fa fa-home fa-2x" aria-hidden="ture"></i>
+        <lb-footer v-if="currentView!='lb-login flexs  '">
+            <lb-switchover v-on:increment="incrementTotalhome" :class="{blueer:iscolor1}" class="footer_icon">
+                <i  class="fa fa-circle-o fa-2x bradius" aria-hidden="ture"></i>
             </lb-switchover>
-            <lb-switchover v-on:increment="incrementTotaluser">
-                <i :class="{blueer:iscolor2}" class="fa fa-user fa-2x" aria-hidden="ture"></i>
+            <lb-switchover v-on:increment="incrementTotaluser" :class="{blueer:iscolor2}" class="footer_icon">
+                <i class="fa fa-user-o fa-2x bradius" aria-hidden="ture"></i>
             </lb-switchover>
         </lb-footer>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="gray">
-        <div class='user-header greener '>
+        <div class='user-header greener shadow'>
             <el-row>
                 <el-col :span="24">
                     <div>
@@ -30,19 +30,8 @@
                     </div>
                 </el-col>
             </el-row>
-        
         </div>
-        <div class='user-pwddata'>
-            <el-row>
-                <el-col :span="24">
-                    <div class="grid-content pwddata">
-                        <i class="fa fa-paint-brush fa-lg" aria-hidden="true"></i>
-                        <div class='disinblock '>修改密码</div>
-                    </div>
-                </el-col>
-            </el-row>
-        </div>
-        <div class="user-order">
+        <div class="user-order shadow">
             <el-row>
                 <el-col :span="24">
                     <div class="grid-content orderdata borderbotm">
@@ -109,7 +98,7 @@
                 </el-col>
             </el-row>
         </div> -->
-        <div class="user-pay">
+        <div class="user-pay shadow">
             <el-row>
                 <el-col :span="24">
                     <div class="grid-content orderdata borderbotm">

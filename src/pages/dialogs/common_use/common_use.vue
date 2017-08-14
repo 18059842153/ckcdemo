@@ -31,7 +31,7 @@
                 </div>
                 <div v-show="loading" slot="bottom" class="loading">
                     <!--这个div是为让上拉加载的时候显示一张加载的gif图 -->
-                    <div class="txt-center" >
+                    <div class="txt-center">
                         <img src="/assets/images/loadup.gif" style="height:15px;with:15px">
                     </div>
                 </div>
@@ -54,7 +54,6 @@ export default {
             allLoaded: false,
             bottomText: '上拉加载更多...',
             bottomStatus: '',
-            pageNo: 1,
             totalCount: '',
         }
     },
@@ -136,22 +135,28 @@ export default {
                 'type': ''
             })
             this.loading = true;
-            this.pageNo += 1;   // 每次更迭加载的页数
+            this.pagination.currentPage += 1;   // 每次更迭加载的页数
+            console.log(this.pagination.currentPage)
             let filterTxt = this.base64.encode(JSON.stringify(filterObj))
-            if (this.pageNo == this.totalGetCount) {
+            if (this.pagination.currentPage * this.pagination.pagesize < this.pagination.total) {
                 // 当allLoaded = true时上拉加载停止
                 this.loading = false;
                 this.allLoaded = true;
+                /*     api.commonApi(后台接口，请求参数) 这个api是封装的axios有不懂的可以看vue2+ vuex + axios那篇文章 */
+                this.handleGetFilterTableTable(this.$store.state.commondata.commondata, filterTxt).then(res => {
+                    setTimeout(() => {
+                        /*       要使用的后台返回的数据写在setTimeout里面 */
+                        this.$nextTick(() => {
+                            this.loading = false;
+                        })
+                    }, 1000)
+                });
+            }else{
+                 this.loading = false;
+                this.allLoaded = true;
             }
-            /*     api.commonApi(后台接口，请求参数) 这个api是封装的axios有不懂的可以看vue2+ vuex + axios那篇文章 */
-            this.handleGetFilterTableTable(this.$store.state.commondata.commondata, filterTxt).then(res => {
-                setTimeout(() => {
-                    /*       要使用的后台返回的数据写在setTimeout里面 */
-                    this.$nextTick(() => {
-                        this.loading = false;
-                    })
-                }, 1000)
-            });
+            
+
         },
         handleBottomChange(status) {
             this.bottomStatus = status;

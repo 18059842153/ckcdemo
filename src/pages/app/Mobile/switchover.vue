@@ -1,14 +1,10 @@
 <template>
-    <el-col class="txt-center widths" :span="12">
+    <el-col class="txt-center footer_widths"   :span="12">
         <div  v-on:click="incrementCounter">
             <slot></slot>
         </div>
     </el-col>
 </template>
-<style>
-
-</style>
-
 <script>
 export default {
     name: 'switchover',

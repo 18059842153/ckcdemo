@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="shadow">
         <el-row>
           <slot></slot>
         </el-row>
