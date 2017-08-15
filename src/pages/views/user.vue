@@ -77,27 +77,6 @@
                 </el-col>
             </el-row>
         </div>
- <!--        <div class='user-content'>
-            <el-row>
-                <el-col :span="24">
-                    <div class="grid-content pwddata ">
-                        <i class="fa fa-life-ring fa-lg" aria-hidden="true"></i>
-                        <div class='disinblock '>推荐中心</div>
-                    </div>
-    
-                </el-col>
-            </el-row>
-        </div> -->
-   <!--      <div class='user-pay'>
-            <el-row>
-                <el-col :span="24">
-                    <div class="grid-content pwddata borderbotm">
-                        <i class="fa fa-money" aria-hidden="true"></i>
-                        <div class='disinblock '>我的钱包</div>
-                    </div>
-                </el-col>
-            </el-row>
-        </div> -->
         <div class="user-pay shadow">
             <el-row>
                 <el-col :span="24">

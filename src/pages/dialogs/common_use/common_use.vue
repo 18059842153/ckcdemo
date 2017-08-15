@@ -15,7 +15,6 @@
             </el-row>
         </div>
         <div class="card_body overflower_show">
-            <!-- 上拉加载更多 -->
             <lb-scroll :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" :bottomPullText='bottomText' :auto-fill="false" @bottom-status-change="handleBottomChange" ref="loadmore">
                 <div>
                     <!--   这里写你需要的另外的模块 -->
@@ -30,7 +29,6 @@
                     </template>
                 </div>
                 <div v-show="loading" slot="bottom" class="loading">
-                    <!--这个div是为让上拉加载的时候显示一张加载的gif图 -->
                     <div class="txt-center">
                         <img src="/assets/images/loadup.gif" style="height:15px;with:15px">
                     </div>
@@ -61,13 +59,13 @@ export default {
         let filterObj = []
         filterObj.push({
             'key': 'student_id',
-            'value': '5983c8f94ffcb068b342d0ac',
+            'value': this.$store.state.student_id.student_id,
             'type': ''
         })
         let filterTxt = this.base64.encode(JSON.stringify(filterObj))
         this.handleGetFilterTableTable(this.$store.state.commondata.commondata, filterTxt).then(obj => {
             this.dbdata = obj.data.data
-            console.log(this.dbdata)
+            console.log(this.dbdata[0])
         })
     },
     computed: {
@@ -78,9 +76,9 @@ export default {
                     itemLable = this.moduledata[i].pageLable
                 }
             }
-            console.log(this.moduledata)
             return itemLable
         },
+        //配置文件
         getpageTable() {
             for (let i = 0; i < this.moduledata.length; i++) {
                 if (this.moduledata[i].pageTable == this.$store.state.commondata.commondata) {
@@ -108,9 +106,6 @@ export default {
             }
             return info
         },
-        handleBack() {
-            this.$store.commit('homes', 'lb-home')
-        },
         getTime(sum) {
             for (var i = 0; i < sum.length; i++) {
                 if (sum[i].track_time || sum[i].arrangestart || sum[i].creattime) {
@@ -121,22 +116,19 @@ export default {
             }
             return sum
         },
-        /*     _scroll: function (ev) {
-                ev = ev || event;
-                this.scrollHeight = this.$refs.innerScroll.scrollHeight;
-                this.scrollTop = this.$refs.innerScroll.scrollTop;
-                this.containerHeight = this.$refs.innerScroll.offsetHeight;
-            }, */
+         handleBack() {
+            this.$store.commit('homes', 'lb-home')
+        },
         loadBottom: function () {
             let filterObj = []
             filterObj.push({
                 'key': 'student_id',
-                'value': '5983c8f94ffcb068b342d0ac',
+                'value': this.$store.state.student_id.student_id,
                 'type': ''
             })
             this.loading = true;
             this.pagination.currentPage += 1;   // 每次更迭加载的页数
-            console.log(this.pagination.currentPage)
+            /*      console.log(this.pagination.currentPage) */
             let filterTxt = this.base64.encode(JSON.stringify(filterObj))
             if (this.pagination.currentPage * this.pagination.pagesize < this.pagination.total) {
                 // 当allLoaded = true时上拉加载停止
@@ -151,11 +143,11 @@ export default {
                         })
                     }, 1000)
                 });
-            }else{
-                 this.loading = false;
+            } else {
+                this.loading = false;
                 this.allLoaded = true;
             }
-            
+
 
         },
         handleBottomChange(status) {

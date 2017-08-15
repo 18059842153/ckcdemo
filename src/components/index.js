@@ -1,8 +1,10 @@
 
 import scroll from './scroll/'
 
+
 const components = [
-    scroll
+    scroll,
+
 ]
 const install = function (Vue) {
     if (install.installed) return
@@ -14,6 +16,7 @@ const install = function (Vue) {
 export default {
     version: '1.0.1',
     install,
-    scroll
+    scroll,
+ 
 
 }

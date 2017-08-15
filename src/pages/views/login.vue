@@ -7,34 +7,19 @@
         </div>
         <div class='modal-body'>
             <el-form :model="numberValidateForm" ref="numberValidateForm" label-width='60px'>
-                <el-form-item label="电话" prop="age" :rules="[
-                                                                              { required: true, message: '电话不能为空'},
-                                                                              { type: 'text', message: '电话必须为数字值'}
-                                                                            ]">
-                    <el-input type="text" v-model="numberValidateForm.user" auto-complete="off"></el-input>
+                <el-form-item label="账户" prop="age"  :rules="[
+                                                                                              { required: true, message: '电话不能为空'},
+                                                                                              { type: 'text', message: '电话必须为数字值'}
+                                                                                            ]">
+                    <el-input type="text" :disabled="true" v-model="numberValidateForm.user" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item class='padbom' label="验证" :rules="[
-                                                                              { required: true, message: '验证码不能为空'},
-                                                                              { type: 'text', message: '验证码必须为数字值'}
-                                                                            ]">
-                    <el-row>
-                        <el-col :span="12">
-                            <el-input type='text' v-model="numberValidateForm.pwd"></el-input>
-                        </el-col>
-                        <el-col :span="12">
-                            <el-button v-bind:class="{touch:iscolor}" type=" floatright" style="width:70%" @click="handleVerification">验证码</el-button>
-                        </el-col>
-                    </el-row>
+                <el-form-item class='padbom' label="密码" >
+                    <el-input type='password' v-model="numberValidateForm.pwd" :disabled="true"></el-input>
                 </el-form-item>
                 <div class='text-center login_padleft'>
                     <el-row>
                         <el-col :span="24" class='padbom'>
                             <el-button class="login_button" type="Success" @click="submitForm">登陆</el-button>
-                        </el-col>
-                    </el-row>
-                    <el-row>
-                        <el-col :span="24">
-                            <el-button class="login_button" @click="resetForm('numberValidateForm')">重置</el-button>
                         </el-col>
                     </el-row>
                 </div>
@@ -91,10 +76,7 @@ export default {
                 user: '',
                 pwd: ''
             }
-            this.$store.commit('homes', 'lb-home')
-        },
-        resetForm(formName) {
-            this.$refs[formName].resetFields();
+            this.$store.commit('homes', 'lb-verification')
         },
         handleVerification() {
             this.iscolor = true

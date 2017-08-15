@@ -3,7 +3,7 @@
         <component v-bind:is="currentView">
             <!-- 组件在 vm.currentview 变化时改变！ -->
         </component>
-        <lb-footer v-if="currentView!='lb-login flexs  '">
+        <lb-footer v-if="currentView!='lb-login'">
             <lb-switchover v-on:increment="incrementTotalhome" :class="{blueer:iscolor1}" class="footer_icon">
                 <i  class="fa fa-circle-o fa-2x bradius" aria-hidden="ture"></i>
             </lb-switchover>
@@ -19,6 +19,7 @@ import switchover from './Mobile/switchover.vue'
 import user from '../views/user.vue'
 import home from '../views/home.vue'
 import login from '../views/login.vue'
+import verification from '../views/verification.vue'
 import common_use from '../dialogs/common_use/common_use.vue'
 
 
@@ -49,6 +50,7 @@ export default {
         'lb-switchover': switchover,
         'lb-login': login,
         'lb-common': common_use,
+        'lb-verification':verification,
     },
     methods: {
         incrementTotalhome() {

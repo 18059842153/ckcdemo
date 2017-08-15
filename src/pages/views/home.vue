@@ -39,7 +39,7 @@ export default {
     methods: {
         handleClick(value) {
             this.$store.dispatch('commons',value)
-            console.log(this.$store.state.commondata.commondata)
+          /*   console.log(this.$store.state.commondata.commondata) */
             this.$store.commit('homes', 'lb-common')
         }
     }

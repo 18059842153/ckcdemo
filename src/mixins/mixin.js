@@ -86,7 +86,7 @@ export default {
             return datetimestr
         },
         getDictData(type, value) {
-            console.log(value, '1111111')
+          /*   console.log(value, '1111111') */
             let tablaData = []
             let tablaName = 'dictionary'
             tablaData = this.$store.state.models.models[tablaName].data
@@ -95,7 +95,7 @@ export default {
                 if (tablaData[i].type == type) {
                     if (tablaData[i]._id == value) {
                         tablaDatas = tablaData[i].text
-                        console.log(tablaDatas + 'mixin')
+                       /*  console.log(tablaDatas + 'mixin') */
                         break
                     }
                 }
